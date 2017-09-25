@@ -44,9 +44,12 @@ module Pact
             end
           end
 
+          alias_method(:honors_pact_with, :honours_pact_with)
+
           def honours_pact_with consumer_name, options = {}, &block
             create_pact_verification consumer_name, options, &block
           end
+          
         end
 
         def create_pact_verification consumer_name, options, &block
